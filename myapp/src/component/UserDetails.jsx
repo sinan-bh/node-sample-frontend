@@ -8,7 +8,7 @@ function UserDetails() {
 
     useEffect(()=>{
 
-        fetch(`http://localhost:5000/users/${id}`)
+        fetch(`https://node-sample-backend-2.onrender.com/users/${id}`)
         .then(res=>res.json())
         .then(data=>{
             setUser(data);
@@ -23,7 +23,7 @@ function UserDetails() {
         const userConfirmed = window.confirm("Do you want to proceed?");
         if (userConfirmed) {
             
-            fetch(`http://localhost:5000/users/${id}`,{
+            fetch(`https://node-sample-backend-2.onrender.com/users/${id}`,{
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"

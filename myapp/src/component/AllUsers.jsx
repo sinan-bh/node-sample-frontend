@@ -9,7 +9,7 @@ function AllUsers() {
 
     useEffect(()=>{
 
-        fetch('http://localhost:5000/users')
+        fetch('https://node-sample-backend-2.onrender.com/users')
         .then(res=>res.json())
         .then(data=>{
             const value = data.filter(list=>list.id)

@@ -12,7 +12,7 @@ function CreateUser() {
     e.preventDefault();
     const newUser = { name, email, uname };
     
-    await fetch('http://localhost:5000/users', {
+    await fetch('https://node-sample-backend-2.onrender.com/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

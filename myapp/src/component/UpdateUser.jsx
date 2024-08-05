@@ -12,7 +12,7 @@ function UpdateUser() {
 
     useEffect(()=>{
 
-        fetch(`http://localhost:5000/users/${id}`)
+        fetch(`https://node-sample-backend-2.onrender.com/users/${id}`)
         .then(res=>res.json())
         .then(data=>{
             setVname(data.name);
@@ -30,7 +30,7 @@ function UpdateUser() {
         e.preventDefault()
         const updateUser = {name: vname,email: vemail,uname: vuname} 
 
-        await fetch(`http://localhost:5000/users/${id}`,{
+        await fetch(`https://node-sample-backend-2.onrender.com/users/${id}`,{
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
