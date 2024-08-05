@@ -11,20 +11,30 @@ function CreateUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newUser = { name, email, uname };
-    
-    await fetch('https://node-sample-backend-2.onrender.com/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newUser),
-    });
-
-    alert('Created Account');
-    setName('')
-    setEmail('')
-    setUname('')
+  
+    try {
+      const response = await fetch('https://node-sample-backend-2.onrender.com/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUser),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      alert('Created Account');
+      setName('');
+      setEmail('');
+      setUname('');
+    } catch (error) {
+      console.error('Failed to create user:', error);
+      alert('Failed to create user. Please try again.');
+    }
   };
+  
 
 
 
